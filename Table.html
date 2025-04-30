@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Table</title>
+    <link rel="stylesheet" href="Table.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+
+   
+    <h2 class="title">User management</h2>
+    <br />
+
+    <label class="intro"
+      >Create, View, Update or Delete your account here</label
+    >
+    <h3 class="User-number">All Users</h3>
+    <div class="flex-container">
+      <form>
+        <div class="search-container">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input
+            type="text"
+            id="searchbar"
+            class="searchbar"
+            placeholder="search"
+            name="searchbar"
+            autocomplete="name"
+          />
+        </div>
+      </form>
+
+      <button class="filter-button">
+        <i class="fa-solid fa-filter filter-icon"></i>
+        <a href="">Filters</a>
+      </button>
+
+      <button onclick="createUser()" class="add-button">
+        <i class="fa-solid fa-user-plus add-icon"></i>
+        Add user
+      </button>
+    </div>
+
+   
+<div class="table-row table-header">
+    <div class="table-cell cell-username"><input type="checkbox" />Username</div>
+    <div class="table-cell cell-access">Access</div>
+    <div class="table-cell cell-last"><i class="fa-solid fa-chevron-down"></i>Last Active</div>
+    <div class="table-cell cell-date">Date Added</div>
+    <div class="table-cell cell-options"></div>
+  </div>
+  
+  
+  <div id="userTableBody"></div>
+
+ <div id="userModal" class="modal hidden">
+  <div class="modal-content">
+    <h3 id="modalTitle">Register New User</h3>
+    <input type="text" id="modalUsername" placeholder="Username">
+    <input type="email" id="modalEmail" placeholder="Email">
+    <input type="password" id="modalPassword" placeholder="Password">
+    <button onclick="submitModalUser()">Submit</button>
+    <button onclick="closeModal()">Cancel</button>
+  </div>
+ </div>
+
+  <div id="output"></div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="Table.js"></script>
+  </body>
+</html>
