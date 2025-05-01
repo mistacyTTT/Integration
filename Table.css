@@ -36,6 +36,8 @@ body{
 }
 
 .filter-button{
+  background-color: black;
+  color: white;
     position: relative;
     top: -60px;
     font-size: 15px;
@@ -258,7 +260,111 @@ body{
 }
 
 .hidden {
+  display: none; 
+}
+
+#loginContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 2rem;
+  width: 300px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+#loginForm input {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+#loginForm button {
+  width: 100%;
+  padding: 0.6rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#loginForm h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+#loginError {
+  color: red;
+  text-align: center;
   display: none;
+}
+
+.registration-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.registration-box h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.registration-box input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.registration-box button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background-color: #3a81f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.registration-box .cancel {
+  background-color: #ccc;
+}
+
+.registration-box .login-link {
+  text-align: center;
+}
+
+.registration-box .login-link a {
+  color: #3a81f3;
+  text-decoration: none;
+}
+
+.registration-box .login-link a:hover {
+  text-decoration: underline;
+}
+
+.registration-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f2f5;
+  padding: 2rem;
 }
 
 
