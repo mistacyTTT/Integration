@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="Table.css" />
+  </head>
+  <body>
+    <div class="registration-container">
+    <div class="registration-box">
+        <h2>Register new User</h2>
+        <input type="text" id="regUsername" placeholder="Username" required />
+        <input type="email" id="regEmail" placeholder="Email" required />
+        <input type="password" id="regPassword" placeholder="Password" required />
+        
+        <button onclick="submitRegistration()">Submit</button>
+        <button class="cancel" onclick="window.location.href='Table.html'">Cancel</button>
+    
+        <p class="login-link">Already a user? <a href="Table.html">Login</a></p>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="Table.js"></script>
+  </body>
+</html>

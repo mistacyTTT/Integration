@@ -1,3 +1,23 @@
+function submitRegistration() {
+  const username = document.getElementById('regUsername').value;
+  const email = document.getElementById('regEmail').value;
+  const password = document.getElementById('regPassword').value;
+
+  axios.post('http://localhost:7000/auth/register', {
+    username,
+    email,
+    password
+  })
+  .then(response => {
+    alert('User registered successfully!');
+    window.location.href = 'Table.html'; // Go to login page
+  })
+  .catch(error => {
+    console.error('POST error:', error);
+    alert('Registration failed. Please try again.');
+  });
+}
+
 function renderUsers(users) {
     const tableBody = document.getElementById('userTableBody');
     tableBody.innerHTML = ''; // clear previous content
@@ -36,6 +56,33 @@ function renderUsers(users) {
       tableBody.appendChild(row);
     });
   }
+
+  const loginForm = document.getElementById('loginForm');
+  const loginError = document.getElementById('loginError');
+
+  loginForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+
+    axios.post('http://localhost:7000/auth/login', {
+      email,
+      password
+    }, {
+      withCredentials: true
+    })
+    .then(() => {
+      // Success: Show rest of app
+      document.getElementById('loginContainer').style.display = 'none';
+      document.getElementById('appContent').style.display = 'block';
+      getData(); // Load users after login
+    })
+    .catch(error => {
+      loginError.style.display = 'block';
+      console.error('Login failed:', error);
+    });
+  });
 
   document.addEventListener('click', function(event) {
     const button = event.target.closest('.dots-btn');
@@ -176,6 +223,8 @@ function deleteUser(id){
       });
     }
   }
+
+  
   
   
 
