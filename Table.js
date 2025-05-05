@@ -10,7 +10,7 @@ function submitRegistration() {
   })
   .then(response => {
     alert('User registered successfully!');
-    window.location.href = 'Table.html'; // Go to login page
+    window.location.href = 'http://127.0.0.1:5500/Table.html?'; // Go to login page
   })
   .catch(error => {
     console.error('POST error:', error);
@@ -159,12 +159,14 @@ function deleteUser(id){
   })
     .then(response => {
       alert('User deleted successfully!');
-      getData();
+      
     })
     .catch(error =>{
       console.error('Deletion error', error);
     });
   }
+
+  getData();
 
 
   let currentUserId = null;
