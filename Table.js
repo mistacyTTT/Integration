@@ -18,6 +18,13 @@ function submitRegistration() {
   });
 }
 
+function formatDate(dateStr) {
+  if (!dateStr) return 'N/A';
+  const date = new Date(dateStr);
+  return date.toLocaleString(); // or toLocaleDateString() if you prefer
+}
+
+
 function renderUsers(users) {
     const tableBody = document.getElementById('userTableBody');
     tableBody.innerHTML = ''; // clear previous content
@@ -40,8 +47,8 @@ function renderUsers(users) {
           <span class="tag blue">Data Export</span>
           <span class="tag purple">Data Import</span>
         </div>
-        <div class="table-cell cell-last">${user.lastActive || 'N/A'}</div>
-        <div class="table-cell cell-date">${user.dateAdded || 'N/A'}</div>
+        <div class="table-cell cell-last">${formatDate(user.lastActive)}</div>
+        <div class="table-cell cell-date">${formatDate(user.dateAdded)}</div>
         <div class="table-cell cell-options">
           <div class="dots_menu">
             <button class="dots-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
